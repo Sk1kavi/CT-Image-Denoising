@@ -1,0 +1,71 @@
+# Ignore virtual environment
+venv/
+env/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+
+# Ignore model files
+*.h5
+*.hdf5
+*.pkl
+*.pt
+*.pth
+*.joblib
+
+# Ignore dataset files
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.json
+*.pickle
+
+# Ignore image/video datasets (optional, if large)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.mp4
+*.avi
+
+# Ignore big compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Ignore other unnecessary folders
+build/
+dist/
+*.egg-info/
+
+# Ignore coverage files
+htmlcov/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
