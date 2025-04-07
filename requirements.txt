@@ -1,0 +1,5 @@
+Flask
+pydicom
+numpy
+scikit-image
+matplotlib

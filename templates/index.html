@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CT Image Denoiser</title>
+    <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('static/images/background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+        /* Center Content */
+        .content {
+            text-align: center;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color:cornflowerblue;
+        }
+
+        /* Paragraph Styling */
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #e6f2fa;
+            line-height: 1.8;
+        }
+
+        /* Button Styling */
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to right, #0073e6, #0059b3);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #0059b3, #004080);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        button:focus {
+            outline: 2px solid #4da6ff;
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            p {
+                font-size: 16px;
+            }
+            button {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>CT Image Denoiser</h1>
+        <p>Welcome to the CT Image Denoiser App! Here you can upload and denoise your CT images with ease. Experience smooth and fast denoising powered by state-of-the-art technology.</p>
+        <a href="{{ url_for('home') }}">
+            <button>Go to Homepage</button>
+        </a>
+    </div>
+</body>
+</html>

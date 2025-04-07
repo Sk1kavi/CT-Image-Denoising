@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CT Image Denoising</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        .form-container {
+            margin: 2rem 0;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container input[type="file"] {
+            margin: 1rem 0;
+        }
+        .form-container button {
+            padding: 0.5rem 1.5rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin: 2rem 0;
+        }
+        .result img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        .result .images-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .result .images-container div {
+            margin: 1rem;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #007bff;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CT Image Denoising</h1>
+    </header>
+    <main>
+        <h2>Upload CT Image</h2>
+        <div class="form-container">
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".dcm" required>
+                <button type="submit">Upload and Process</button>
+            </form>
+        </div>
+
+        {% if snr_before and snr_after %}
+        <div class="result">
+            <h2>Results</h2>
+            <div class="images-container">
+                <div>
+                    <h3>Noised Image</h3>
+                    <img src="{{ noised_image_url }}" alt="Noised Image">
+                </div>
+                <div>
+                    <h3>Denoised Image</h3>
+                    <img src="{{ denoised_image_url }}" alt="Denoised Image">
+                </div>
+            </div>
+            <p><strong>SNR Before Denoising: </strong> {{ snr_before }} dB</p>
+            <p><strong>SNR After Denoising: </strong> {{ snr_after }} dB</p>
+        </div>
+        {% endif %}
+    </main>
+    <footer>
+        <p>© 2025 CT Denoising Application. All rights reserved.</p>
+    </footer>
+</body>
+</html>
