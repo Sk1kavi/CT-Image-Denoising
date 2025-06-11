@@ -69,3 +69,4 @@ coverage.xml
 *.pyc
 *.pyo
 *.pyd
+venv/
